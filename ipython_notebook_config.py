@@ -12,7 +12,7 @@ c.NotebookApp.trust_xheaders = True
 
 # Supply overrides for the tornado.web.Application that the IPython notebook
 # uses.
-c.NotebookApp.webapp_settings = {
+c.NotebookApp.tornado_settings = {
     'headers': {
         'X-Frame-Options': 'ALLOW FROM nature.com'
     },
