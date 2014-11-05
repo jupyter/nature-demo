@@ -13,8 +13,10 @@ c.NotebookApp.trust_xheaders = True
 # Supply overrides for the tornado.web.Application that the IPython notebook
 # uses.
 c.NotebookApp.webapp_settings = {
-    'X-Frame-Options': 'ALLOW FROM nature.com',
-    'Content-Security-Policy': "frame-ancestors 'self' *.nature.com",
+    'headers': {
+        'X-Frame-Options': 'ALLOW FROM nature.com',
+        'Content-Security-Policy': "frame-ancestors 'self' *.nature.com"
+    },
     'template_path':['/srv/ga/', '/srv/ipython/IPython/html',
                      '/srv/ipython/IPython/html/templates']
 }
