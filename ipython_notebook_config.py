@@ -14,8 +14,7 @@ c.NotebookApp.trust_xheaders = True
 # uses.
 c.NotebookApp.webapp_settings = {
     'headers': {
-        'X-Frame-Options': 'ALLOW FROM nature.com',
-        'Content-Security-Policy': "frame-ancestors 'self' *.nature.com"
+        'X-Frame-Options': 'ALLOW FROM http://www.nature.com'
     },
     'template_path':['/srv/ga/', '/srv/ipython/IPython/html',
                      '/srv/ipython/IPython/html/templates']
