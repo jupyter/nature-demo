@@ -56,4 +56,5 @@ target/
 .ipynb_checkpoints
 
 # Ansible secrets
+deploy/inventory
 deploy/secrets.yml
