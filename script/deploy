@@ -14,4 +14,4 @@ else
   VAULT_ARG=--ask-vault-pass
 fi
 
-exec ansible-playbook ${ROOT}/deploy/site.yml -i ${ROOT}/deploy/inventory ${VAULT_ARG}
+exec ansible-playbook ${ROOT}/deploy/site.yml -i ${ROOT}/deploy/inventory ${VAULT_ARG} $@
