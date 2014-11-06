@@ -9,9 +9,9 @@ if [ ! -e ${ROOT}/deploy/inventory ]; then
 fi
 
 if [ -e ${ROOT}/deploy/secrets.yml ]; then
-  VAULT_ARG=--ask-vault-pass
-else
   VAULT_ARG=
+else
+  VAULT_ARG=--ask-vault-pass
 fi
 
 exec ansible-playbook ${ROOT}/deploy/site.yml -i ${ROOT}/deploy/inventory ${VAULT_ARG}
