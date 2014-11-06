@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ROOT=$(dirname $0)/..
+
+if [ ! -e ${ROOT}/deploy/inventory ]; then
+  echo "Please create an inventory file with your hosts."
+  echo " cp deploy/inventory.example deploy/inventory"
+  exit 1
+fi
+
+if [ -e ${ROOT}/deploy/secrets.yml ]; then
+  VAULT_ARG=
+else
+  VAULT_ARG=--ask-vault-pass
+fi
+
+exec ansible-playbook ${ROOT}/deploy/site.yml -i ${ROOT}/deploy/inventory ${VAULT_ARG} $@
