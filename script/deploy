@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ROOT=$(dirname $0)/..
+
+if [ -e ${ROOT}/deploy/secrets.yml ]; then
+  VAULT_ARG=--ask-vault-pass
+else
+  VAULT_ARG=
+fi
+
+exec ansible-playbook ${ROOT}/deploy/site.yml -i ${ROOT}/deploy/inventory ${VAULT_ARG}
