@@ -54,3 +54,6 @@ docs/_build/
 target/
 
 .ipynb_checkpoints
+
+# Ansible secrets
+deploy/secrets.yml
