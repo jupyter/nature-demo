@@ -55,6 +55,7 @@ target/
 
 .ipynb_checkpoints
 
-# Ansible secrets
+# Ansible secrets and local overrides
+deploy/vars.local.yml
 deploy/inventory
 deploy/secrets.yml
