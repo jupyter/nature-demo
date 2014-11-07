@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+'''
+This script requires 4 environment variables to be declared:
+
+    OS_USERNAME - Rackspace user for account that servers will be launched on
+    OS_PASSWORD - API Key for the server launch user 
+
+    OS_DNS_USERNAME - Rackspace user with the tmpnb.org domain
+    OS_DNS_PASSWORD - API key for the DNS user
+
+Then to run, you specify which node number we're creating like nature-iad-001.tmpnb.org
+
+python script/launch.py 10
+
+The Ansible inventory file is spat out to stdout at the end.
+'''
 
 import binascii
 import os
