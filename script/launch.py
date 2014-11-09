@@ -77,14 +77,16 @@ def launch_node(node_num=7):
     }
     
     inventory = '''[notebook]
-notebook_server ansible_ssh_user=root ansible_ssh_host={notebook_server_public} configproxy_auth_token={token}
+{user_server_name} ansible_ssh_user=root ansible_ssh_host={notebook_server_public} configproxy_auth_token={token}
 
 [proxy]
-proxy_server ansible_ssh_user=root ansible_ssh_host={proxy_server_public} notebook_host={notebook_server_private}
+{proxy_server_name} ansible_ssh_user=root ansible_ssh_host={proxy_server_public} notebook_host={notebook_server_private}
 '''.format(notebook_server_public=user_server.accessIPv4,
            notebook_server_private=user_server.networks['private'][0],
            proxy_server_public=proxy_server.accessIPv4,
-           token=binascii.hexlify(os.urandom(24))
+           token=binascii.hexlify(os.urandom(24)),
+           user_server_name=user_server_name,
+           proxy_server_name=proxy_server_name,
     )
     
     print(inventory)
