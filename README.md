@@ -1,7 +1,7 @@
 nature-demo
 ===========
 
-Materials for the November 2014 Nature Article
+Materials for the [November 2014 Nature Article](http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261)
 
 ### Running the Docker image
 
